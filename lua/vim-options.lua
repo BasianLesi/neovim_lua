@@ -6,6 +6,7 @@ vim.cmd("set relativenumber")
 vim.g.python_recommended_style = 0
 vim.g.mapleader = " "
 vim.g.background = "light"
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.swapfile = false
 

@@ -1,18 +1,30 @@
 return {
+  -- Tree-sitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      local config = require("nvim-treesitter.configs")
-      config.setup({
-        auto_install = true,
+      require("nvim-treesitter.configs").setup({
+        auto_install = true, -- Automatically install parsers when opening files
+        ensure_installed = { "python" }, -- Ensure Python parser is installed
         highlight = {
-            enable = false,
-            additional_vim_regex_highlighting = false,
-            disable = {}
+          enable = true, -- Enable Tree-sitter syntax highlighting
+          additional_vim_regex_highlighting = false, -- Disable Vim's regex highlighting
+          disable = {}, -- Optionally disable for specific filetypes
         },
-        indent = { enable = false },
+        indent = {
+          enable = true, -- Enable Tree-sitter-based indentation
+        },
       })
-    end
-  }
+    end,
+  },
+  -- LSP (Pyright)
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("lspconfig").pyright.setup {
+        cmd = { "pyright-langserver", "--stdio" }, -- Ensure correct command
+      }
+    end,
+  },
 }
