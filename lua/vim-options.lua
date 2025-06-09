@@ -36,8 +36,19 @@ end
 vim.keymap.set('n', '<leader>dv', toggle_diagnostic_virtual_text, { noremap = true, silent = true })
 
 -- Cpp debugger mappings__
-vim.api.nvim_set_keymap('n', '<F5>', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F10>', ':lua require"dap".step_over()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F11>', ':lua require"dap".step_into()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F12>', ':lua require"dap".step_out()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>b', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F5>', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F10>', ':lua require"dap".step_over()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F11>', ':lua require"dap".step_into()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F12>', ':lua require"dap".step_out()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>b', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
+
+-- ipynb keymapping
+--
+-- Press <leader>r to run the current cell.
+-- Press <leader>n to run the next cell.
+-- Press <leader>o to open the output pane.
+--
+-- vim.cmd [[ autocmd FileType python call jukit#splits#output() ]]
+-- vim.keymap.set("n", "<leader>r", ":call jukit#send_cell()<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>n", ":call jukit#send_next_cell()<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>o", ":call jukit#splits#output()<CR>", { silent = true })

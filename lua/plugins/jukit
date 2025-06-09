@@ -1,0 +1,6 @@
+return {
+  {
+    "luk400/vim-jukit",
+    lazy = false  -- load immediately or adjust as needed
+  }
+}
