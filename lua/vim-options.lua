@@ -52,3 +52,9 @@ vim.keymap.set('n', '<leader>dv', toggle_diagnostic_virtual_text, { noremap = tr
 -- vim.keymap.set("n", "<leader>r", ":call jukit#send_cell()<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>n", ":call jukit#send_next_cell()<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>o", ":call jukit#splits#output()<CR>", { silent = true })
+
+-- Toggle Markview preview: Ctrl+/ (also maps Ctrl-?)
+-- Use <C-_> which is the canonical keycode for Ctrl+/
+vim.keymap.set('n', '<C-_>', function()
+  vim.cmd('Markview toggle')
+end, { noremap = true, silent = true, desc = 'Toggle Markview preview' })
