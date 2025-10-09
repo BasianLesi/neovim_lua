@@ -25,13 +25,4 @@ return {
       })
     end,
   },
-  -- LSP (Pyright)
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("lspconfig").pyright.setup {
-        cmd = { "pyright-langserver", "--stdio" }, -- Ensure correct command
-      }
-    end,
-  },
 }
