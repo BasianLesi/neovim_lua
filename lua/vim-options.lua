@@ -22,8 +22,13 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 -- vim.wo.number = true
 
--- mapping that toggles search highlighting by pressing , key 
+-- mapping that toggles search highlighting by pressing , key
 vim.keymap.set('n', ',', ':set hlsearch! hlsearch?<CR>')
+
+-- :Q (or :Q!) force-quits everything without saving
+vim.api.nvim_create_user_command('Q', function()
+    vim.cmd('qa!')
+end, { bang = true, desc = 'Force quit all without saving' })
 
 
 local function toggle_diagnostic_virtual_text()
