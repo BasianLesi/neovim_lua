@@ -3,13 +3,6 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    dependencies = {
-      {
-        "OXY2DEV/markview.nvim",
-        lazy = false,
-        priority = 49,
-      },
-    },
     config = function()
       require("nvim-treesitter.configs").setup({
         auto_install = true, -- Automatically install parsers when opening files

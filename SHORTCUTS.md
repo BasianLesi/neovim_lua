@@ -103,14 +103,6 @@
 
 ---
 
-## Markdown Preview
-
-| Shortcut | Mode | Description |
-|----------|------|-------------|
-| `<C-_>` (Ctrl+/) | Normal | Toggle Markview preview |
-
----
-
 ## Commented Out / Disabled Shortcuts
 
 The following shortcuts are present in your config but currently disabled:
